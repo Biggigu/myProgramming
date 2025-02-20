@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             
             const formData = new FormData(registerForm);
-            fetch("/register", {
+            fetch("/Templates/register.html", {
                 method: "POST",
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
                 alert(data.message);
-                window.location.href = "/leaderboard";
+                window.location.href = "/Templates/leaderboard.html";
             })
             .catch(error => console.error("Error:", error));
         });

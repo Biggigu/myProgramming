@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register for Escape Room</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Player Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Escape Room Registration</h1>
-    
-    <form id="registerForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="contact">Contact:</label>
-        <input type="text" id="contact" name="contact">
-        
-        <button type="submit">Register</button>
-    </form>
-    
-    <p><a href="/">Back to Home</a></p>
-    
-    <script src="/static/js/script.js"></script>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Escape Room Logo" class="logo">
+        </header>
+        <main>
+            <h2>Player Details</h2>
+            <form action="{{ url_for('register') }}" method="POST">
+                <label for="playerName">*Player Name:</label>
+                <input type="text" id="playerName" name="playerName" required>
+                
+                <label for="playerSurname">*Player Surname:</label>
+                <input type="text" id="playerSurname" name="playerSurname" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone">
+                
+                <button type="submit">Start</button>
+            </form>
+            <p class="disclaimer">If an email address or phone number is not provided, we may not be able to contact you if you win any prizes.</p>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

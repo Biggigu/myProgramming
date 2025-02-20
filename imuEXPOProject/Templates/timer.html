@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room Timer</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Escape Room Timer</h1>
-    
-    <div id="timer-display">00:00</div>
-    <button id="start-timer">Start</button>
-    <button id="stop-timer">Stop</button>
-    <button id="reset-timer">Reset</button>
-    
-    <p><a href="/">Back to Home</a></p>
-    
-    <script src="/static/js/script.js"></script>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Escape Room Logo" class="logo">
+        </header>
+        <main>
+            <div id="timer-display">15:00:00</div>
+            <form action="{{ url_for('submit_time') }}" method="POST">
+                <input type="hidden" name="final_time" id="final_time">
+                <button type="submit" id="stopButton">Stop</button>
+            </form>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
 </body>
 </html>

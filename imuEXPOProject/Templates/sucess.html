@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Escape Room Logo" class="logo">
+        </header>
+        <main>
+            <h2>Congratulations! You successfully completed the Escape Room.</h2>
+            <p>You came {{ rank }} in the Leaderboard</p>
+            <a href="{{ url_for('leaderboard') }}"><button>View Leaderboard</button></a>
+        </main>
+    </div>
+</body>
+</html>
