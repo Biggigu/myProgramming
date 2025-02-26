@@ -1,0 +1,55 @@
+/* General Page Styling */
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+/* Center Container */
+.container {
+    text-align: center;
+    max-width: 500px;
+}
+
+/* Buttons Styling */
+.btn-lg {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Leaderboard Styling */
+.leaderboard {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+.leaderboard table {
+    width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Adjust the size as needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+    .logo {
+        width: 60px;
+    }
+}
