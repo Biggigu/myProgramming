@@ -1,0 +1,17 @@
+dog
+mouse
+table
+boat     
+bus
+jupiter
+ocean
+ground
+cat
+bread
+shuffle
+vehicle
+leather
+paper
+sweets
+mushroom
+money
