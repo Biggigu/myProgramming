@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lapto\\source\\repos\\Session2_Exercise\u002B1_Storing_user_Data\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4439C9DE-09A9-4C28-9524-F5B5D5A35104}|Session2_Exercise\u002B1_Storing_user_Data\\Session2_Exercise\u002B1_Storing_user_Data.csproj|c:\\users\\lapto\\source\\repos\\session2_exercise\u002B1_storing_user_data\\session2_exercise\u002B1_storing_user_data\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4439C9DE-09A9-4C28-9524-F5B5D5A35104}|Session2_Exercise\u002B1_Storing_user_Data\\Session2_Exercise\u002B1_Storing_user_Data.csproj|solutionrelative:session2_exercise\u002B1_storing_user_data\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Session2_Exercise\u002B1_Storing_user_Data\\Session2_Exercise\u002B1_Storing_user_Data\\Program.cs",
+              "RelativeDocumentMoniker": "Session2_Exercise\u002B1_Storing_user_Data\\Program.cs",
+              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Session2_Exercise\u002B1_Storing_user_Data\\Session2_Exercise\u002B1_Storing_user_Data\\Program.cs",
+              "RelativeToolTip": "Session2_Exercise\u002B1_Storing_user_Data\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T10:08:52.68Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

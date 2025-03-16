@@ -1,0 +1,7 @@
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\bin\Debug\Section3_Constrol_Flow.exe.config
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\bin\Debug\Section3_Constrol_Flow.exe
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\bin\Debug\Section3_Constrol_Flow.pdb
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\obj\Debug\Section3_Constrol_Flow.csproj.AssemblyReference.cache
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\obj\Debug\Section3_Constrol_Flow.csproj.CoreCompileInputs.cache
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\obj\Debug\Section3_Constrol_Flow.exe
+C:\Users\lapto\source\repos\Section3_Constrol_Flow\Section3_Constrol_Flow\obj\Debug\Section3_Constrol_Flow.pdb
