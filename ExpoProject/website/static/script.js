@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    // var checkbox = document.getElementById("agree");
+    // var submitBtn = document.getElementById("submitBtn");
+
+    // checkbox.addEventListener("change", function() {
+    //     submitBtn.disabled = !checkbox.checked;
+    // });
+
     let countdown;
-    let timeLeft = 900; // 15 minutes in seconds
+    let timeLeft = 1800; // 15 minutes in seconds
     let running = false;
 
     const timerDisplay = document.getElementById("timer-display");
@@ -14,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateTimer() {
-        timerDisplay.textContent = formatTime(timeLeft);
+        timerDisplay.value = formatTime(timeLeft);
+        timerDisplay.setAttribute("data-time", timeLeft);
     }
 
     startButton.addEventListener("click", function () {
@@ -27,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     updateTimer();
                 } else {
                     clearInterval(countdown);
-                    alert("Time is up!");
+                    window.location = "result";
                     running = false;
                 }
             }, 1000);
@@ -38,30 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (running) {
             running = false;
             clearInterval(countdown);
-            alert("Timer stopped at: " + formatTime(timeLeft));
-        }
-    });
 
-    updateTimer();
+            // Update the input field before submitting
+            timerDisplay.value = timeLeft;
+
+            // Submit the form
+            stopButton.closest("form").submit();
+            }
+        });
 });
-
-function stopTimer() {
-    if (running) {
-        running = false;
-        clearInterval(countdown);
-        
-        let escapeTime = 900 - timeLeft; // Calculate time taken (15 min - remaining time)
-        
-        alert("Timer stopped at: " + formatTime(timeLeft));
-
-        // Send the escape time to Flask
-        fetch("/submit-time", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ escapeTime: escapeTime })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data)) // Logs response in browser console
-        .catch(error => console.error("Error:", error));
-    }
-}

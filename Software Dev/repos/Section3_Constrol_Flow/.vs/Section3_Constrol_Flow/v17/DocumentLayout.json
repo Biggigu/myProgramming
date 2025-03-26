@@ -1,49 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\",
+  "WorkspaceRootPath": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|c:\\users\\lapto\\source\\repos\\section3_constrol_flow\\section3_constrol_flow\\tryparse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\tryparse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\task4_while_optionselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\task4_while_optionselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|c:\\users\\lapto\\source\\repos\\section3_constrol_flow\\section3_constrol_flow\\formatcurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\formatcurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\formatcurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|c:\\users\\lapto\\source\\repos\\section3_constrol_flow\\section3_constrol_flow\\conditionaloperator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\conditionaloperator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\consoleio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\consoleio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\dowhileloops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\task4_while_optionselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\task4_while_optionselection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\consoleio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\consoleio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|c:\\users\\lapto\\documents\\myprogramming\\software dev\\repos\\section3_constrol_flow\\section3_constrol_flow\\tryparse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\tryparse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\conditionaloperator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\conditionaloperator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\exercise2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\section3_constrol_flow\\dowhileloops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{557B50E5-936A-4144-B18E-6B7D8FDDF6B7}|Section3_Constrol_Flow\\Section3_Constrol_Flow.csproj|solutionrelative:section3_constrol_flow\\dowhileloops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -54,80 +54,79 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "TryParse.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\TryParse.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\TryParse.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\TryParse.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\TryParse.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\TryParse.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\TryParse.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwA8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T21:39:12.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ConditionalOperator.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConditionalOperator.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConditionalOperator.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\ConditionalOperator.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConditionalOperator.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConditionalOperator.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\ConditionalOperator.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T22:34:40.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T22:34:40.382Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "FormatCurrency.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\FormatCurrency.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\FormatCurrency.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\FormatCurrency.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\FormatCurrency.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\FormatCurrency.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\FormatCurrency.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA0wCcAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwCcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T17:55:18.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "Exercise4.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise4.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise4.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Exercise4.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise4.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise4.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Exercise4.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAoAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T16:11:46.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Exercise1.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise1.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise1.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Exercise1.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise1.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise1.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Exercise1.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wCAAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T12:56:30.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Program.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Program.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Program.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Program.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAtwBUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -136,13 +135,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Task4_While_optionSelection.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Task4_While_optionSelection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-15T21:39:50.277Z",
               "EditorCaption": ""
@@ -151,48 +150,47 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "ConsoleIO.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConsoleIO.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConsoleIO.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\ConsoleIO.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConsoleIO.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\ConsoleIO.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\ConsoleIO.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAgwF4AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwF4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T10:39:40.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Exercise3.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise3.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise3.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Exercise3.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise3.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise3.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Exercise3.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwCAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T15:35:33.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Exercise2.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise2.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise2.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\Exercise2.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise2.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\Exercise2.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\Exercise2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:27:45.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T14:27:45.987Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "DoWhileLoops.cs",
-              "DocumentMoniker": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\DoWhileLoops.cs",
+              "DocumentMoniker": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\DoWhileLoops.cs",
               "RelativeDocumentMoniker": "Section3_Constrol_Flow\\DoWhileLoops.cs",
-              "ToolTip": "C:\\Users\\lapto\\source\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\DoWhileLoops.cs",
+              "ToolTip": "C:\\Users\\lapto\\Documents\\myProgramming\\Software Dev\\repos\\Section3_Constrol_Flow\\Section3_Constrol_Flow\\DoWhileLoops.cs",
               "RelativeToolTip": "Section3_Constrol_Flow\\DoWhileLoops.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
