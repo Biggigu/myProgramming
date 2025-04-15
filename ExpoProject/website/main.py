@@ -34,18 +34,33 @@ def leaderboard():
 # -----------------------
 # REGISTER
 # -----------------------
+import re
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         try:
-            idCardTxt = request.form.get('idCard')
-            if dbHandle.checkUnique(idCardTxt):
+            idCard = request.form.get('idCard')
+            phone = request.form.get('phone')
+
+            # ID: 5-7 digits + letter (case-insensitive)
+            if not re.match(r"^\d{5,7}[a-zA-Z]$", idCard):
+                return jsonify({"success": False, "message": "❌ Invalid ID (e.g., 12345M)"})
+
+            # Phone: Either 8 digits or + international number
+            if not (re.match(r"^\d{8}$", phone) or re.match(r"^\+\d{8,15}$", phone)):
+                return jsonify({"success": False, "message": "❌ Phone must be 8 digits OR in +countrycode format."})
+
+            if dbHandle.checkUnique(idCard.upper()):  # store in uppercase
                 dbHandle.insertData(request)
                 return jsonify({"success": True, "message": "✅ Registration successful! Redirecting..."})
             else:
                 return jsonify({"success": False, "message": "❌ This ID Card is already registered today!"})
-        except:
+
+        except Exception as e:
+            print("Registration Error:", e)
             return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
+
     return render_template("register.html")
 
 # -----------------------
