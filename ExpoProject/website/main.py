@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 import databaseHandler as dbHandle
 from sendEmails import sendEmail
 from exportDatabase import exportDB, exportData
+import webbrowser
+import threading
 
 app = Flask(__name__)
 app.secret_key = 'berry_secret_key'
@@ -19,8 +21,13 @@ def home():
     users = dbHandle.threeTopData()
     return render_template("index.html", users=users)
 
+@app.route("/index")
+def leaderReturn():
+    return redirect("/")
+
 @app.route("/home")
 def main():
+    webbrowser.open_new("http://127.0.0.1:5000/leaderboard")
     return redirect("/")
 
 # -----------------------
@@ -180,12 +187,11 @@ if __name__ == "__main__":
 # RUN APP
 # ------------------------
 
-import webbrowser
-import threading
-
 def open_browser():
-    webbrowser.open_new("http://127.0.0.1:5000")
+    webbrowser.open_new("http://127.0.0.1:5000/home")
+    
+    
 
 if __name__ == "__main__":
     threading.Timer(1.25, open_browser).start()
-    app.run(debug=False)
+    app.run(debug=True)

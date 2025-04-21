@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Expo25 Escape Room</title>
-    <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,11 +14,15 @@
         <div class="container position-relative mb-4">
             <img src="{{ url_for('static', filename='images/Expo25 LOGO-transparentBackground.png') }}"
                  alt="Expo Logo"
-                 style="max-height: 300%; position: absolute; top: 0; left: 0;">  <!-- border: 1px solid black; border-radius: 5px;"> -->
+                 style="max-height: 300%; position: absolute; top: 0; left: 0;">
             <h1 id="secret-admin-trigger" class="text-center mb-lg-5">Welcome to the Escape Room!</h1>
         </div>
+
+        <!-- START Button -->
         <button class="btn btn-primary btn-lg mb-lg-4" onclick="location.href='register'">Start</button>
-        <button class="btn btn-secondary btn-lg mb-lg-4" onclick="location.href='leaderboard'">Score Board</button>
+
+        <!-- POPUP SCOREBOARD Button -->
+        <button class="btn btn-secondary btn-lg mb-lg-4" onclick="openLeaderboardPopup()">Score Board</button>
 
         <div class="mt-4 p-3 border rounded bg-white">
             <h2 class="mb-3">Escape Champions!</h2>
@@ -46,22 +48,40 @@
     </div>
 
     <script>
+        // Admin double click
         document.getElementById("secret-admin-trigger").addEventListener("dblclick", () => {
             window.location.href = "/admin";
         });
 
+        // Auto-refresh logic
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('refresh') === '30') {
             location.reload();
         }
+
+        // Leaderboard popup
+        function openLeaderboardPopup() {
+            const width = 900;
+            const height = 600;
+            const left = window.screen.width - width - 20;
+            const top = 50;
+
+            window.open(
+                "/leaderboard",
+                "LeaderboardPopup",
+                `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+            );
+        }
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-    <footer class="bg-transparent mt-5">
-        <div class="container text-end">
-            <img src="{{ url_for('static', filename='images/SIGURTA.png') }}"
-                alt="SIGURTA Logo"
-                style="height: 60px; margin-bottom: 10px; margin-right: 10px;">
-        </div>
-    </footer>
+
+<footer class="bg-transparent mt-5">
+    <div class="container text-end">
+        <img src="{{ url_for('static', filename='images/SIGURTA.png') }}"
+            alt="SIGURTA Logo"
+            style="height: 60px; margin-bottom: 10px; margin-right: 10px;">
+    </div>
+</footer>
 </html>
