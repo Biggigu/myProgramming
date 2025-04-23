@@ -35,44 +35,24 @@ def leaderboard():
     users = dbHandle.retrieveData()
     return render_template("leaderboard.html", users=users)
 
-
-@app.route("/booking", methods=['GET', 'POST'])
-def booking():
+@app.route("/register", methods=['GET', 'POST'])
+def register():
     if request.method == 'POST':
         try:
-            # Leader
-            leader_name = request.form.get('leader_name')
-            leader_surname = request.form.get('leader_surname')
-            leader_email = request.form.get('leader_email')
-            leader_phone = request.form.get('leader_phone')
-            team_name = request.form.get('team_name')
+            name = request.form.get('name')
+            surname = request.form.get('surname')
 
-            if not all([leader_name, leader_surname, leader_email, leader_phone, team_name]):
+            if not name or not surname:
                 return jsonify({"success": False, "message": "❌ All fields are required."})
 
-            # Add leader to DB
-            dbHandle.insertPlayer(leader_name, leader_surname, leader_email, leader_phone, team_name, is_leader=True)
-
-            # Optional players 2–4
-            for i in range(2, 5):
-                name = request.form.get(f'player{i}_name')
-                surname = request.form.get(f'player{i}_surname')
-                email = request.form.get(f'player{i}_email')
-                if name and surname and email:
-                    dbHandle.insertPlayer(name, surname, email, phone=None, team_name=team_name, is_leader=False)
-
-            return jsonify({"success": True, "message": "✅ Booking confirmed!"})
+            dbHandle.insertData(request)
+            return jsonify({"success": True, "message": "✅ Registration successful! Redirecting..."})
 
         except Exception as e:
-            print("Booking Error:", e)
+            print("Registration Error:", e)
             return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
 
-    return render_template("booking.html")
-
-@app.route("/confirm-booking", methods=['GET', 'POST'])
-def confirm_booking():
-    return render_template("confirmBooking.html")
-
+    return render_template("register.html")
 
 @app.route("/timer")
 def timer():
