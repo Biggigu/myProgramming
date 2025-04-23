@@ -1,15 +1,20 @@
 from flask import Flask, render_template, request, jsonify, redirect, session, flash
-from datetime import datetime, timedelta
+from datetime import timedelta
 import databaseHandler as dbHandle
 from exportDatabase import exportDB, exportData
 import threading, webbrowser, os
+import hashlib
 
 app = Flask(__name__)
 app.secret_key = 'berry_secret_key'
 app.permanent_session_lifetime = timedelta(minutes=5)
 app.register_blueprint(exportDB)
 
-ADMIN_PASSWORD = "admin123"
+ADMIN_PASSWORD = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9"
+
+def checkPassword(password,actualPassword):
+    input = hashlib.sha256(password.encode()).hexdigest()
+    return input == actualPassword
 
 @app.route("/")
 def home():
@@ -87,7 +92,8 @@ def admin():
     users = dbHandle.retrieveData()
     error = None
     if request.method == 'POST':
-        if request.form.get('admin_pass') == ADMIN_PASSWORD:
+        passCheck = checkPassword(request.form.get('admin_pass'),ADMIN_PASSWORD)
+        if passCheck:
             session.permanent = True
             session['admin'] = True
         else:
