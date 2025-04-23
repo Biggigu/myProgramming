@@ -2,7 +2,7 @@ import sqlite3
 from flask import jsonify,request
 
 class DatabaseConnection:
-    def __init__(self, database_file="data.db"):
+    def __init__(self, database_file="escapeRoom.db"):
         self.database_file = database_file
         self.newDBIfNoExist()
 

@@ -2,7 +2,7 @@ import sqlite3
 from flask import jsonify,request
 
 class DatabaseConnection:
-    def __init__(self, database_file="data.db"):
+    def __init__(self, database_file="academia.db"):
         self.database_file = database_file
         self.newDBIfNoExist()
 
@@ -62,7 +62,7 @@ def retrieveData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
     #cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players ORDER BY escapeTime;")
-    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime FROM players ORDER BY escapeTime;")
+    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime, id FROM players ORDER BY escapeTime;")
     users = cursor.fetchall()
     connection.close()
     return users
