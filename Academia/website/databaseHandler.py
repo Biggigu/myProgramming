@@ -104,13 +104,24 @@ def sixTopData():
     connection.close()
     return users
 
+
+def deleteUser(value):
+        try:
+            connection = DatabaseConnection().connect()
+            cursor = connection.cursor()
+            cursor.execute("DELETE FROM players WHERE id = ?", (value,))
+            connection.commit()
+        except Exception as e:
+            print(f"Error deleting user: {e}")
+        finally:
+            connection.close()
+
 def databaseClear():
         connection = DatabaseConnection().connect()
         cursor = connection.cursor()
-        cursor.execute("DELETE FROM players;")
+        cursor.execute("DELETE * FROM players;")
         connection.commit()
         connection.close()
-    
-
+        
 if __name__ == '__main__':
     DatabaseConnection.newDBIfNoExist()

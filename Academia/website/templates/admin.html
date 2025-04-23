@@ -37,14 +37,18 @@
                     <th>Rank</th>
                     <th>Username</th>
                     <th>Escape Time</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="leaderboard-entries">
                 {% for user in users %}
-                <tr>
+                <tr id = "{{ user[2] }}">
                     <td>{{ loop.index }}</td>
                     <td>{{ user[0] }}</td>
                     <td>{{ user[1] }}</td>
+                    <td>
+                        <button onclick="deleteUser('{{ user[2] }}')">Delete</button>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -124,6 +128,26 @@
             }, 1000);
 
             new bootstrap.Modal(document.getElementById('deleteModal2')).show();
+        }
+
+        function deleteUser(userId) {
+            fetch(`/deleteUser/${userId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Optionally remove the row from the DOM
+                    document.getElementById(userId).remove();
+                } else {
+                    alert("Failed to delete user");
+                }
+            })
+            .catch(error => {
+                console.error("Error deleting user:", error);
+            });
         }
     </script>
 </body>

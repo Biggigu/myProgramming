@@ -94,6 +94,13 @@ def admin():
             error = "❌ Incorrect password."
     return render_template("admin.html", authorized=session.get("admin", False), error=error,users=users)
 
+@app.route('/deleteUser/<userID>', methods=['DELETE'])
+def delete_user(userID):
+    dbHandle.deleteUser(userID)
+    users = dbHandle.retrieveData()
+    return render_template("admin.html", authorized=session.get("admin", False),users=users)
+
+
 @app.route("/logout")
 def logout():
     session.pop("admin", None)
