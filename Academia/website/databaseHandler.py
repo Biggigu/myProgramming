@@ -104,31 +104,6 @@ def sixTopData():
     connection.close()
     return users
 
-def insertPlayer(name, surname, email, phone, team_name, is_leader=False):
-    connection = DatabaseConnection().connect()
-    cursor = connection.cursor()
-
-    # Create a new table if needed (optional if you haven't created a 'teams' structure yet)
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS bookings (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            surname TEXT,
-            email TEXT,
-            phone TEXT,
-            team TEXT,
-            is_leader INTEGER DEFAULT 0
-        )
-    ''')
-
-    cursor.execute('''
-        INSERT INTO bookings (name, surname, email, phone, team, is_leader)
-        VALUES (?, ?, ?, ?, ?, ?)
-    ''', (name, surname, email, phone, team_name, int(is_leader)))
-
-    connection.commit()
-    connection.close()
-
 
 def deleteUser(value):
         try:
