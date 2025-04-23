@@ -194,6 +194,7 @@
                 if (response.ok) {
                     // Optionally remove the row from the DOM
                     document.getElementById(userId).remove();
+                    window.location.reload();
                 } else {
                     alert("Failed to delete user");
                 }
