@@ -119,7 +119,9 @@ def deleteUser(value):
 def databaseClear():
         connection = DatabaseConnection().connect()
         cursor = connection.cursor()
-        cursor.execute("DELETE * FROM players;")
+        cursor.execute("DELETE FROM players;")
+        # Reset the autoincrementing ID
+        cursor.execute("DELETE FROM sqlite_sequence WHERE name='players';")
         connection.commit()
         connection.close()
         
