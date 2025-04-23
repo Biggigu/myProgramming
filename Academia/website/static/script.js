@@ -64,6 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById("start-button");
     const stopButton = document.getElementById("stop-button");
     const hiddenField = document.getElementById("hidden-time-field");
+    const timerDisplay = document.getElementById("timer-display");
+
+    if (startButton && timerDisplay) {
+        timeLeft = 0;
+        updateTimer();
+    }
 
     // Restore if available
     if (localStorage.getItem("sharedTimeLeft")) {
