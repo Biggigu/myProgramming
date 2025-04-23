@@ -84,6 +84,7 @@ def update_time():
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
+    users = dbHandle.retrieveData()
     error = None
     if request.method == 'POST':
         if request.form.get('admin_pass') == ADMIN_PASSWORD:
@@ -91,7 +92,7 @@ def admin():
             session['admin'] = True
         else:
             error = "❌ Incorrect password."
-    return render_template("admin.html", authorized=session.get("admin", False), error=error)
+    return render_template("admin.html", authorized=session.get("admin", False), error=error,users=users)
 
 @app.route("/logout")
 def logout():
