@@ -1,0 +1,90 @@
+/* Import Roboto and Font Awesome */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Expo24 Brand Colors */
+:root {
+  --primary-color: #af3d3c;
+  --secondary-color: #213c65;
+  --accent-color: #f5f7fa;
+  --text-color: #2f3032;
+  --font-main: 'Roboto', sans-serif;
+}
+
+/* Body Base */
+body {
+  font-family: var(--font-main);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: var(--primary-color);
+  color: white !important;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button:hover, .btn:hover {
+  background-color: var(--secondary-color);
+  color: white !important;
+}
+
+/* Navbar (if needed later) */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+}
+.navbar a {
+  color: white !important;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Card Box */
+.card, .leaderboard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 20px auto;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+.table td {
+  color: var(--text-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
