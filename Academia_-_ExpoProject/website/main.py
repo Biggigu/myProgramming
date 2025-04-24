@@ -30,6 +30,10 @@ def main():
     webbrowser.open_new("http://127.0.0.1:5000/leaderboard")
     return redirect("/")
 
+@app.route("/startGame")
+def preBooking():
+    return render_template("confirmBooking.html")
+
 @app.route("/leaderboard")
 def leaderboard():
     users = dbHandle.retrieveData()
