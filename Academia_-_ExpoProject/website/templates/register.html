@@ -65,18 +65,27 @@
                 </div>
             </div>
 
-            <div class="my-3 text-start">
-                <label class="form-label">Group Type</label><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="group_type" value="single" required>
-                    <label class="form-check-label">Single Player</label>
+            <hr class="my-4 ">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Group Type</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="group_type" value="single" required>
+                        <label class="form-check-label">Single Player</label>
+                    </div>
+                    <div class="form-check form-check-inline col-md-6">
+                        <input class="form-check-input" type="radio" name="group_type" value="group" checked>
+                        <label class="form-check-label">Group</label>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="group_type" value="group" checked>
-                    <label class="form-check-label">Group</label>
+                
+                <div class="col-md-6">
+                    <label class="form-label">Number of People</label>
+                    <input type="number" class="form-control" name="players" required>
                 </div>
             </div>
-
+            
             <hr class="my-4">
 
             <h5 class="mb-3 text-start text-primary">👥 Additional Players</h5>

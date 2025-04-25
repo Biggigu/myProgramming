@@ -45,10 +45,8 @@ def insertData(request):
     idCard =idCard.upper()
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    #cursor.execute('INSERT INTO players (idCard, name, surname, email, phone, escapeTime) VALUES (?,?,?,?,?,?)',
-    #                   (idCard, name, surname, email, phone, "30:00"))
-    cursor.execute('INSERT INTO players (idCard, name, surname, escapeTime) VALUES (?,?,?,?)',
-                       (idCard, name, surname, "30:00"))
+    cursor.execute('INSERT INTO players (idCard, name, surname, email, phone, escapeTime) VALUES (?,?,?,?,?,?)',
+                       (idCard, name, surname, email, phone, "30:00"))
     connection.commit()
     connection.close()
 
