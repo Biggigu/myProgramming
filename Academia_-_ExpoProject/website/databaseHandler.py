@@ -15,66 +15,69 @@ class DatabaseConnection:
         cursor = connection.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS players (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        name TEXT,
-                        surname TEXT,
-                       escapeTime TEXT)''')
+                        name VARCHAR(50),
+                        surname VARCHAR(50),
+                        username VARCHAR(50),
+                        email VARCHAR(50),
+                        phone VARCHAR(50),
+                        team BOOLEAN,
+                        escapeTime TEXT)''')
         connection.commit()
         connection.close()
     
-# def checkUnique(value):
-#     value = value.upper()
+def checkUnique(value):
+    value = value.upper()
 
-#     connection = DatabaseConnection().connect()
-#     cursor = connection.cursor()
-#     cursor.execute('SELECT COUNT(*) FROM players WHERE idCard = ?', (value,))
-#     count = cursor.fetchone()[0]
-#     connection.close()
-#     return count == 0 # True if unique
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute('SELECT COUNT(*) FROM players WHERE idCard = ?', (value,))
+    count = cursor.fetchone()[0]
+    connection.close()
+    return count == 0 # True if unique
 
 def insertData(request):
-    #idCard = request.form.get('idCard')
+    idCard = request.form.get('idCard')
     name = request.form.get('name')
     surname = request.form.get('surname')
-    #email = request.form.get('email')
-    #phone = request.form.get('phone')
+    email = request.form.get('email')
+    phone = request.form.get('phone')
     
-    #idCard =idCard.upper()
+    idCard =idCard.upper()
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
     #cursor.execute('INSERT INTO players (idCard, name, surname, email, phone, escapeTime) VALUES (?,?,?,?,?,?)',
     #                   (idCard, name, surname, email, phone, "30:00"))
-    cursor.execute('INSERT INTO players (name, surname, escapeTime) VALUES (?,?,?)',
-                       (name, surname, "00:00"))
+    cursor.execute('INSERT INTO players (idCard, name, surname, escapeTime) VALUES (?,?,?,?)',
+                       (idCard, name, surname, "30:00"))
     connection.commit()
     connection.close()
 
 def updateData(escapeTime):
-    connection = DatabaseConnection().connect()
+    """ connection = DatabaseConnection().connect()
     cursor = connection.cursor()
     cursor.execute('UPDATE players SET escapeTime = ? WHERE id = (SELECT MAX(id) FROM players);',
                    (escapeTime,))
     connection.commit()
-    connection.close()
+    connection.close() """
 
-    return jsonify({'message': 'Time recorded successfully'})
+    return jsonify({'message': 'Code need to be adjusted accordingly'})
 
 def retrieveData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    #cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players ORDER BY escapeTime;")
-    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime, id FROM players ORDER BY escapeTime;")
+    cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players ORDER BY escapeTime;")
     users = cursor.fetchall()
     connection.close()
     return users
 
 # For sending emails
-# def retrieveOne():
-#     connection = DatabaseConnection().connect()
-#     cursor = connection.cursor()
-#     cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players WHERE id = (SELECT MAX(id) FROM players) ORDER BY escapeTime;")
-#     users = cursor.fetchone()
-#     connection.close()
-#     return users
+def retrieveOne():
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players WHERE id = (SELECT MAX(id) FROM players) ORDER BY escapeTime;")
+    users = cursor.fetchone()
+    connection.close()
+    return users
 
 def ranking():
     connection = DatabaseConnection().connect()
