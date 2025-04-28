@@ -1,12 +1,12 @@
 let countdown;
-let timeLeft = 0;
+let timeLeft = 900;
 let running = false;
 let mirrorInterval;
 
 const formatTime = (seconds) => {
     let minutes = Math.floor(seconds / 60);
     let secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+    return `${minutes}:${secs < 10 ? "15:00" : ""}${secs}`;
 };
 
 function updateTimer() {
@@ -23,7 +23,7 @@ function startTimer() {
         running = true;
         localStorage.setItem("timerStopped", "false");
         countdown = setInterval(() => {
-            timeLeft++;
+            timeLeft--;
             updateTimer();
         }, 1000);
     }
@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // START
     if (startButton) {
         startButton.addEventListener("click", () => {
-            timeLeft = 0;
-            localStorage.setItem("sharedTimeLeft", 0);
+            timeLeft = 900;
+            localStorage.setItem("sharedTimeLeft",900);
             localStorage.setItem("displayMode", "timer");
             localStorage.setItem("timerStopped", "false");
             startTimer();
