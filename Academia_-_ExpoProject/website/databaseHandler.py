@@ -53,6 +53,10 @@ def insertData(request):
     phone = request.form.get('phone')
     
     idCard =idCard.upper()
+    if (len(idCard) < 8):
+        padding = "0"*(8-len(idCard))
+        idCard = padding + idCard
+
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
     cursor.execute('INSERT INTO players (idCard, name, surname, email, phone, escapeTime) VALUES (?,?,?,?,?,?)',

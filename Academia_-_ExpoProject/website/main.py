@@ -110,7 +110,6 @@ def delete_user(userID):
     users = dbHandle.retrieveData()
     return render_template("admin.html", authorized=session.get("admin", False),users=users)
 
-
 @app.route("/logout")
 def logout():
     session.pop("admin", None)
