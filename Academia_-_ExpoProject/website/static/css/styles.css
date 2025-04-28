@@ -4,8 +4,8 @@
 
 /* Expo24 Brand Colors */
 :root {
-  --primary-color: #af3d3c;
-  --secondary-color: #213c65;
+  --primary-color: #AE1F24;
+  --secondary-color: #0189AB;
   --accent-color: #f5f7fa;
   --text-color: #2f3032;
   --font-main: 'Roboto', sans-serif;
@@ -24,7 +24,7 @@ body {
 
 /* Headings */
 h1, h2, h3 {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-weight: 700;
 }
 

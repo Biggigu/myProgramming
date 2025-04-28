@@ -7,7 +7,7 @@ exportDB = Blueprint('export', __name__)
 
 @exportDB.route('/export', methods=['GET'])
 def exportData():
-    conn = sqlite3.connect('academia.db')
+    conn = sqlite3.connect('escapeRoom.db')
     df = pd.read_sql_query("SELECT * FROM players", conn)
     conn.close()
 
