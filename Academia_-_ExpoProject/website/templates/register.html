@@ -71,20 +71,21 @@
                 <div class="col-md-6">
                     <label class="form-label">Group Type</label><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="group_type" value="single" required>
+                        <input class="form-check-input" type="radio" name="group_type" value="single" checked onchange="toggleDiv()">
                         <label class="form-check-label">Single Player</label>
                     </div>
                     <div class="form-check form-check-inline col-md-6">
-                        <input class="form-check-input" type="radio" name="group_type" value="group" checked>
+                        <input class="form-check-input" type="radio" name="group_type" value="group" onchange="toggleDiv()">
                         <label class="form-check-label">Group (max 4 people)</label>
                     </div>
                 </div>
-                
-                <div class="col-md-6">
+            
+                <!-- Hidden div initially, will show for 'group' option -->
+                <div id="valGroup" class="col-md-6" style="display: none;">
                     <label class="form-label">Number of People</label>
                     <input type="number" class="form-control" name="players" value="1" required>
                 </div>
-            </div>
+            </div>            
 
             <hr class="my-4">
 
@@ -149,5 +150,17 @@
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                function toggleDiv() {
+                    const selectedValue = document.querySelector('input[name="group_type"]:checked').value;
+                    const valGroup = document.getElementById('valGroup'); // Correct the target element
+
+                    if (selectedValue === 'group') {
+                        valGroup.style.display = 'block'; // Show for 'group' option
+                    } else {
+                        valGroup.style.display = 'none'; // Hide for 'single' option
+                    }
+                }
+            </script>
     </body>
 </html>

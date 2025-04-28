@@ -6,7 +6,7 @@ let mirrorInterval;
 const formatTime = (seconds) => {
     let minutes = Math.floor(seconds / 60);
     let secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? "15:00" : ""}${secs}`;
+    return `${minutes}:${secs > 10 ? "00:00" : ""}${secs}`;
 };
 
 function updateTimer() {
