@@ -13,6 +13,14 @@
 
 </head>
 <body class="bg-light">
+    <div class="d-flex justify-content-end align-items-center p-3">
+        <a href="/index" class="mx-2">
+            <img src="{{ url_for('static', filename='images/MT_Flag.png') }}" alt="Maltese Flag" style="height: 40px; width: 40px; border-radius: 50%;">
+        </a>
+        <a href="/index_en" class="mx-2">
+            <img src="{{ url_for('static', filename='images/UK_Flag.png') }}" alt="English Flag" style="height: 40px; width: 40px; border-radius: 50%;">
+        </a>
+    </div>
     <div class="container mt-5 text-center">
         {% if not authorized %}
         <h2 class="mb-4" ondblclick="window.location.href='/'">Admin Login</h2>

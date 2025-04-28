@@ -25,6 +25,12 @@ def home():
 def leaderReturn():
     return redirect("/")
 
+@app.route("/index_en")
+def index_en():
+    users = dbHandle.sixTopData()
+    return render_template("index_en.html", users=users)
+
+
 @app.route("/home")
 def main():
     webbrowser.open_new("http://127.0.0.1:5000/leaderboard")
