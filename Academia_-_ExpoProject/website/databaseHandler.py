@@ -35,6 +35,16 @@ def checkUnique(value):
     connection.close()
     return count == 0 # True if unique
 
+def checkUniqueUser(value):
+    value = value.upper()
+
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute('SELECT COUNT(*) FROM players WHERE username = ?', (value,))
+    count = cursor.fetchone()[0]
+    connection.close()
+    return count == 0 # True if unique
+
 def insertData(request):
     idCard = request.form.get('idCard')
     name = request.form.get('name')
