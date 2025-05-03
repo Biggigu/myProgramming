@@ -30,15 +30,28 @@
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label">ID Card</label>
-            <input type="text" class="form-control" name="leader_id" required />
+            <input
+              id="id1"
+              type="text"
+              class="form-control"
+              name="leader_id"
+              required
+            />
           </div>
           <div class="col-md-6">
             <label class="form-label">Nickname / Team Name</label>
-            <input type="text" class="form-control" name="team_name" required />
+            <input
+              id="tName"
+              type="text"
+              class="form-control"
+              name="team_name"
+              required
+            />
           </div>
           <div class="col-md-6">
             <label class="form-label">First Name</label>
             <input
+              id="name1"
               type="text"
               class="form-control"
               name="leader_name"
@@ -48,6 +61,7 @@
           <div class="col-md-6">
             <label class="form-label">Surname</label>
             <input
+              id="surname1"
               type="text"
               class="form-control"
               name="leader_surname"
@@ -57,6 +71,7 @@
           <div class="col-md-6">
             <label class="form-label">Email</label>
             <input
+              id="email1"
               type="email"
               class="form-control"
               name="leader_email"
@@ -66,6 +81,7 @@
           <div class="col-md-6">
             <label class="form-label">Mobile Number</label>
             <input
+              id="phone1"
               type="tel"
               class="form-control"
               name="leader_phone"
@@ -126,9 +142,12 @@
           <div id="valGroup" class="col-md-6" style="display: none">
             <label class="form-label">Number of People</label>
             <input
+              id="playersNum"
               type="number"
               class="form-control"
               name="players"
+              min="2"
+              max="4"
               value="2"
               required
             />
@@ -139,38 +158,7 @@
 
         <div id="additionPlayers" style="display: none">
           <h5 class="mb-3 text-start text-primary">👥 Additional Players</h5>
-          {% for i in range(2, 5) %}
-          <div class="row g-3 mb-2">
-            <div class="col-md-3">
-              <input
-                class="form-control"
-                name="player{{ i }}_id"
-                placeholder="ID Card Player {{ i }}"
-              />
-            </div>
-            <div class="col-md-3">
-              <input
-                class="form-control"
-                name="player{{ i }}_name"
-                placeholder="First Name"
-              />
-            </div>
-            <div class="col-md-3">
-              <input
-                class="form-control"
-                name="player{{ i }}_surname"
-                placeholder="Surname"
-              />
-            </div>
-            <div class="col-md-3">
-              <input
-                class="form-control"
-                name="player{{ i }}_email"
-                placeholder="Email"
-              />
-            </div>
-          </div>
-          {% endfor %}
+          <div id="playersContainer"></div>
 
           <hr class="my-4" />
         </div>
@@ -267,11 +255,75 @@
         if (selectedValue === "group") {
           valGroup.style.display = "block"; // Show for 'group' option
           additionPlayers.style.display = "block";
+          generatePlayerFields();
+
+          // Attach event listener AFTER the input is shown and exists in the DOM
+          const inputEl = document.getElementById("playersNum");
+          if (inputEl && !inputEl.dataset.listenerAttached) {
+            inputEl.addEventListener("input", generatePlayerFields);
+            inputEl.dataset.listenerAttached = "true"; // Prevent double-binding
+          }
         } else {
           valGroup.style.display = "none"; // Hide for 'single' option
           additionPlayers.style.display = "none";
         }
       }
+
+      function generatePlayerFields() {
+        let number = parseInt(document.getElementById("playersNum").value);
+        const container = document.getElementById("playersContainer");
+        container.innerHTML = "";
+
+        if (isNaN(number) || number < 2 || number > 4) {
+          alert(
+            "The number of players cannot be left empty once the Group is selected and has to be a number between 2 and 4"
+          );
+          return;
+        }
+        number -= 1;
+
+        for (let i = 1; i <= number; i++) {
+          let playNum = i + 1;
+          container.innerHTML += `
+          <div class="row g-3 mb-2">
+            <div class="col-md-3">
+              <input class="form-control"
+                id="id${playNum}"
+                name="player${playNum}_id" 
+                placeholder="ID Card Player ${playNum}" 
+                required />
+            </div>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="name${playNum}"
+                name="player${playNum}_name" 
+                placeholder="First Name" 
+                required />
+            </div>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="surname${playNum}"
+                name="player${playNum}_surname"
+                placeholder="Surname"
+                required />
+            </div>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="email${playNum}"
+                name="player${playNum}_email"
+                placeholder="Email"
+                required />
+            </div>
+          </div>`;
+        }
+      }
+      // Trigger when the number changes
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("playersNum")
+          .addEventListener("input", generatePlayerFields);
+        toggleDiv(); // Run on load in case group is preselected
+      });
     </script>
   </body>
 </html>
