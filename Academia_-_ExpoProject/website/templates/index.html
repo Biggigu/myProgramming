@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body class="text-center bg-light">
+
+    <!-- Language Switcher -->
+    <div class="container text-end mt-2">
+        <div class="d-inline-flex align-items-center" style="gap: 5px;">
+            <a href="/public_index" style="background: transparent;">
+                <img src="{{ url_for('static', filename='images/MT_Flag.png') }}"
+                     alt="Maltese"
+                     style="height: 24px; width: 24px; opacity: {{ '1' if request.path == '/public_index' else '0.3' }};">
+            </a>
+            <a href="/public_index_en" style="background: transparent;">
+                <img src="{{ url_for('static', filename='images/UK_Flag.png') }}"
+                     alt="English"
+                     style="height: 24px; width: 24px;">
+            </a>
+        </div>
+    </div>
+
     <div class="container mt-5">
         <!-- Logo + Title -->
         <div class="container position-relative mb-4">
