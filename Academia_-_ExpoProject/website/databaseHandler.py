@@ -24,7 +24,8 @@ class DatabaseConnection:
                         team BOOLEAN,
                         escapeTime TEXT,
                         bookingDate VARCHAR(50),
-                        bookingTime VARCHAR(50))''')
+                        bookingTime VARCHAR(50),
+                        played BOOLEAN DEFAULT False);''')
         connection.commit()
         connection.close()
     
@@ -76,11 +77,9 @@ def retrieveData():
     cursor = connection.cursor()
     cursor.execute("""
         SELECT username, email, phone, escapeTime
-        FROM (
-            SELECT *, ROW_NUMBER() OVER (PARTITION BY username ORDER BY id) as rn
-            FROM players
-        ) sub
-        WHERE rn = 1
+        FROM players
+        WHERE played = 1
+        GROUP BY username
     """)
     users = cursor.fetchall()
     connection.close()
