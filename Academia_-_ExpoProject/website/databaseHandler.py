@@ -22,7 +22,9 @@ class DatabaseConnection:
                         email VARCHAR(50),
                         phone VARCHAR(50),
                         team BOOLEAN,
-                        escapeTime TEXT)''')
+                        escapeTime TEXT,
+                        bookingDate VARCHAR(50),
+                        bookingTime VARCHAR(50))''')
         connection.commit()
         connection.close()
     
@@ -37,7 +39,7 @@ def checkUnique(value):
     return count == 0 # True if unique
 
 def checkUniqueUser(value):
-    value = value.upper()
+    value = value.title()
 
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
@@ -47,30 +49,34 @@ def checkUniqueUser(value):
     return count == 0 # True if unique
 
 def insertData(request,value):
-    try:
-        idCard = request.form.get(f"id{value}")
-        name = request.form.get(f"name{value}")
-        surname = request.form.get(f"surname{value}")
-        team = request.form.get("tName")
-        group = request.form.get("group_type") == "group"
-        email = request.form.get(f"email{value}")
-        phone = request.form.get(f"phone{value}")
-        
-        idCard =idCard.upper()
-        if (len(idCard) < 8):
-            padding = "0"*(8-len(idCard))
-            idCard = padding + idCard
-        connection = DatabaseConnection().connect()
-        cursor = connection.cursor()
-        cursor.execute('INSERT INTO players (idCard, name, surname, username, email, phone, team, escapeTime) VALUES (?,?,?,?,?,?,?,?)',
-                        (idCard, name, surname,team, email, phone, group,"30:00"))
-        connection.commit()
-        print("✅ INSERT worked")
-    except Exception as e:
-        print("❌ DB ERROR:", e)
-    finally:
-        connection.close()
+    idCard = request.form.get(f"id{value}")
+    name = request.form.get(f"name{value}")
+    surname = request.form.get(f"surname{value}")
+    username = request.form.get("tName")
+    group = request.form.get("group_type") == "group"
+    email = request.form.get(f"email{value}")
+    phone = request.form.get(f"phone{value}")
+    date = request.form.get("date")
+    time = request.form.get("time")
+    
+    idCard =idCard.upper()
+    username = username.title()
+    if (len(idCard) < 8):
+        padding = "0"*(8-len(idCard))
+        idCard = padding + idCard
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute('INSERT INTO players (idCard, name, surname, username, email, phone, team, escapeTime, bookingDate, bookingTime) VALUES (?,?,?,?,?,?,?,?,?,?)',
+                    (idCard, name, surname,username, email, phone, group,"15:00",date,time))
+    connection.commit()
+    connection.close()
 
+
+
+
+
+
+# To check
 def updateData(escapeTime):
     """ connection = DatabaseConnection().connect()
     cursor = connection.cursor()

@@ -45,8 +45,9 @@ def register():
         try:
             username = request.form.get("tName")
             usernameCheck = dbHandle.checkUniqueUser(username)
+            print(usernameCheck)
 
-            if (usernameCheck):
+            if (usernameCheck == False):
                 return jsonify({"success": False, "message": "❌ The Nickname/Team Name has been taken by someone else please choose another name."})
             else:
                 singleGroup = request.form.get("group_type") == "single"
