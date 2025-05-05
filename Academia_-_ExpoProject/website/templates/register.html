@@ -34,7 +34,7 @@
               id="id1"
               type="text"
               class="form-control"
-              name="leader_id"
+              name="id1"
               required
             />
           </div>
@@ -44,7 +44,7 @@
               id="tName"
               type="text"
               class="form-control"
-              name="team_name"
+              name="tName"
               required
             />
           </div>
@@ -54,7 +54,7 @@
               id="name1"
               type="text"
               class="form-control"
-              name="leader_name"
+              name="name1"
               required
             />
           </div>
@@ -64,7 +64,7 @@
               id="surname1"
               type="text"
               class="form-control"
-              name="leader_surname"
+              name="surname1"
               required
             />
           </div>
@@ -74,7 +74,7 @@
               id="email1"
               type="email"
               class="form-control"
-              name="leader_email"
+              name="email1"
               required
             />
           </div>
@@ -84,7 +84,7 @@
               id="phone1"
               type="tel"
               class="form-control"
-              name="leader_phone"
+              name="phone1"
               required
             />
           </div>
@@ -289,29 +289,36 @@
             <div class="col-md-3">
               <input class="form-control"
                 id="id${playNum}"
-                name="player${playNum}_id" 
+                name="id${playNum}" 
                 placeholder="ID Card Player ${playNum}" 
                 required />
             </div>
             <div class="col-md-3">
               <input class="form-control"
                 id="name${playNum}"
-                name="player${playNum}_name" 
+                name="name${playNum}" 
                 placeholder="First Name" 
                 required />
             </div>
             <div class="col-md-3">
               <input class="form-control"
                 id="surname${playNum}"
-                name="player${playNum}_surname"
+                name="surname${playNum}"
                 placeholder="Surname"
                 required />
             </div>
             <div class="col-md-3">
               <input class="form-control"
                 id="email${playNum}"
-                name="player${playNum}_email"
+                name="email${playNum}"
                 placeholder="Email"
+                required />
+            </div>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="phone${playNum}"
+                name="phone${playNum}"
+                placeholder="Phone"
                 required />
             </div>
           </div>`;

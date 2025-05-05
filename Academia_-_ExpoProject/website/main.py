@@ -43,6 +43,27 @@ def leaderboard():
 def register():
     if request.method == 'POST':
         try:
+            username = request.form.get("tName")
+            usernameCheck = dbHandle.checkUniqueUser(username)
+
+            if (usernameCheck):
+                return jsonify({"success": False, "message": "❌ The Nickname/Team Name has been taken by someone else please choose another name."})
+            else:
+                singleGroup = request.form.get("group_type") == "single"
+                if singleGroup:
+                    looping = 1
+                else:
+                    looping = int(request.form.get("players"))
+
+                for num in range(1,looping+1):
+                    dbHandle.insertData(request,num)
+                return jsonify({"success": True, "message": "✅ Registration successful! Redirecting..."})
+            
+
+        except Exception as e:
+            print("Registration Error:", e)
+            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
+        """ try:
             name = request.form.get('name')
             surname = request.form.get('surname')
 
@@ -54,7 +75,7 @@ def register():
 
         except Exception as e:
             print("Registration Error:", e)
-            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
+            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."}) """
 
     return render_template("register.html")
 

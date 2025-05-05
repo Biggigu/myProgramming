@@ -15,6 +15,7 @@ class DatabaseConnection:
         cursor = connection.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS players (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        idCard VARCHAR(9),
                         name VARCHAR(50),
                         surname VARCHAR(50),
                         username VARCHAR(50),
@@ -45,20 +46,30 @@ def checkUniqueUser(value):
     connection.close()
     return count == 0 # True if unique
 
-def insertData(request):
-    idCard = request.form.get('idCard')
-    name = request.form.get('name')
-    surname = request.form.get('surname')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    
-    idCard =idCard.upper()
-    connection = DatabaseConnection().connect()
-    cursor = connection.cursor()
-    cursor.execute('INSERT INTO players (idCard, name, surname, email, phone, escapeTime) VALUES (?,?,?,?,?,?)',
-                       (idCard, name, surname, email, phone, "30:00"))
-    connection.commit()
-    connection.close()
+def insertData(request,value):
+    try:
+        idCard = request.form.get(f"id{value}")
+        name = request.form.get(f"name{value}")
+        surname = request.form.get(f"surname{value}")
+        team = request.form.get("tName")
+        group = request.form.get("group_type") == "group"
+        email = request.form.get(f"email{value}")
+        phone = request.form.get(f"phone{value}")
+        
+        idCard =idCard.upper()
+        if (len(idCard) < 8):
+            padding = "0"*(8-len(idCard))
+            idCard = padding + idCard
+        connection = DatabaseConnection().connect()
+        cursor = connection.cursor()
+        cursor.execute('INSERT INTO players (idCard, name, surname, username, email, phone, team, escapeTime) VALUES (?,?,?,?,?,?,?,?)',
+                        (idCard, name, surname,team, email, phone, group,"30:00"))
+        connection.commit()
+        print("✅ INSERT worked")
+    except Exception as e:
+        print("❌ DB ERROR:", e)
+    finally:
+        connection.close()
 
 def updateData(escapeTime):
     """ connection = DatabaseConnection().connect()
@@ -73,7 +84,7 @@ def updateData(escapeTime):
 def retrieveData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    cursor.execute("SELECT name || ' ' || surname AS 'username', email, phone, escapeTime FROM players ORDER BY escapeTime;")
+    cursor.execute("SELECT username, email, phone, escapeTime FROM players ORDER BY escapeTime;")
     users = cursor.fetchall()
     connection.close()
     return users
