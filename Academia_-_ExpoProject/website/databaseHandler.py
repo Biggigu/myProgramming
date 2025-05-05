@@ -71,6 +71,33 @@ def insertData(request,value):
     connection.commit()
     connection.close()
 
+def retrieveData():
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute("""
+        SELECT username, email, phone, escapeTime
+        FROM (
+            SELECT *, ROW_NUMBER() OVER (PARTITION BY username ORDER BY id) as rn
+            FROM players
+        ) sub
+        WHERE rn = 1
+    """)
+    users = cursor.fetchall()
+    connection.close()
+    return users
+
+def sixTopData():
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute("""SELECT username, escapeTime FROM (
+            SELECT *, ROW_NUMBER() OVER (PARTITION BY username ORDER BY id) as rn
+            FROM players
+        ) sub
+        WHERE rn = 1
+     ORDER BY escapeTime LIMIT 6;""")
+    users = cursor.fetchall()
+    connection.close()
+    return users
 
 
 
@@ -86,14 +113,6 @@ def updateData(escapeTime):
     connection.close() """
 
     return jsonify({'message': 'Code need to be adjusted accordingly'})
-
-def retrieveData():
-    connection = DatabaseConnection().connect()
-    cursor = connection.cursor()
-    cursor.execute("SELECT username, email, phone, escapeTime FROM players ORDER BY escapeTime;")
-    users = cursor.fetchall()
-    connection.close()
-    return users
 
 # For sending emails
 def retrieveOne():
@@ -124,13 +143,7 @@ def ranking():
     lastRank = rankingDict.get(latestId, "Unranked")
     return lastRank, ranking
 
-def sixTopData():
-    connection = DatabaseConnection().connect()
-    cursor = connection.cursor()
-    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime FROM players ORDER BY escapeTime LIMIT 6;")
-    users = cursor.fetchall()
-    connection.close()
-    return users
+
 
 
 def deleteUser(value):
