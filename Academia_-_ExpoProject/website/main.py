@@ -21,6 +21,11 @@ def home():
     users = dbHandle.sixTopData()
     return render_template("index.html", users=users)
 
+@app.route("/index_en")
+def index_en():
+    users = dbHandle.sixTopData()
+    return render_template("index_en.html", users=users)
+
 @app.route("/index")
 def leaderReturn():
     return redirect("/")
@@ -45,46 +50,73 @@ def register():
         try:
             username = request.form.get("tName")
             usernameCheck = dbHandle.checkUniqueUser(username)
-            
-            idCheck = True
-            if (usernameCheck == False):
-                return jsonify({"success": False, "message": "❌ The Nickname/Team Name has been taken by someone else please choose another name."})
-            else:
-                singleGroup = request.form.get("group_type") == "single"
-                if singleGroup:
-                    looping = 1
-                else:
-                    looping = int(request.form.get("players"))
 
-                for num in range(1,looping+1):
-                    id = request.form.get(f"id{num}")
-                    idCheck = dbHandle.checkUnique(id)
-                    if (idCheck==False):
-                        return jsonify({"success": False, "message": "❌ Someone who already played the game cannot enter again."})
+            if not usernameCheck:
+                return jsonify({
+                    "success": False,
+                    "message": "❌ Il-laqam jew isem tat-tim diġà intuża. Jekk jogħġbok agħżel ieħor."
+                })
 
-                for num in range(1,looping+1):
-                    dbHandle.insertData(request,num)
-                return jsonify({"success": True, "message": "✅ Registration successful! Redirecting..."})
-            
+            singleGroup = request.form.get("group_type") == "single"
+            looping = 1 if singleGroup else int(request.form.get("players"))
+
+            for num in range(1, looping + 1):
+                id = request.form.get(f"id{num}")
+                idCheck = dbHandle.checkUnique(id)
+                if not idCheck:
+                    return jsonify({
+                        "success": False,
+                        "message": "❌ Parteċipant li diġà lagħab ma jistax jerġa’ jipparteċipa."
+                    })
+
+            for num in range(1, looping + 1):
+                dbHandle.insertData(request, num)
+
+            return jsonify({
+                "success": True,
+                "message": "✅ Ir-reġistrazzjoni saret b’suċċess! Redirect qed isir..."
+            })
 
         except Exception as e:
-            print("Registration Error:", e)
-            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
-        """ try:
-            name = request.form.get('name')
-            surname = request.form.get('surname')
+            print("Żball fil-Formola (MT):", e)
+            return jsonify({
+                "success": False,
+                "message": "❌ Xi ħaġa marret ħażin. Jekk jogħġbok erġa’ ipprova."
+            })
 
-            if not name or not surname:
-                return jsonify({"success": False, "message": "❌ All fields are required."})
+    return render_template("register.html")
 
-            dbHandle.insertData(request)
+
+@app.route("/register_en", methods=['GET', 'POST'])
+def register_en():
+    if request.method == 'POST':
+        try:
+            username = request.form.get("tName")
+            usernameCheck = dbHandle.checkUniqueUser(username)
+
+            if not usernameCheck:
+                return jsonify({"success": False, "message": "❌ That team name is already taken. Please choose another."})
+
+            singleGroup = request.form.get("group_type") == "single"
+            looping = 1 if singleGroup else int(request.form.get("players"))
+
+            for num in range(1, looping + 1):
+                id = request.form.get(f"id{num}")
+                idCheck = dbHandle.checkUnique(id)
+                if not idCheck:
+                    return jsonify({"success": False, "message": "❌ A player has already participated and cannot re-enter."})
+
+            for num in range(1, looping + 1):
+                dbHandle.insertData(request, num)
+
             return jsonify({"success": True, "message": "✅ Registration successful! Redirecting..."})
 
         except Exception as e:
-            print("Registration Error:", e)
-            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."}) """
+            print("Registration Error (EN):", e)
+            return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
 
-    return render_template("register.html")
+    return render_template("register_en.html")
+
 
 @app.route("/timer")
 def timer():
