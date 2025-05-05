@@ -41,8 +41,30 @@ def leaderboard():
     users = dbHandle.retrieveData()
     return render_template("leaderboard.html", users=users)
 
+# MALTese route
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name')
+            surname = request.form.get('surname')
+
+            if not name or not surname:
+                return jsonify({"success": False, "message": "❌ Jeħtieġ timla l-informazzjoni kollha."})
+
+            dbHandle.insertData(request)
+            return jsonify({"success": True, "message": "✅ Reġistrazzjoni suċċess! Redirecting..."})
+
+        except Exception as e:
+            print("Registration Error:", e)
+            return jsonify({"success": False, "message": "❌ Xi ħaġa marret ħażin. Jekk jogħġbok erġa' ipprova."})
+
+    return render_template("register.html")
+
+
+# ENGLISH route
+@app.route("/register_en", methods=['GET', 'POST'])
+def register_en():
     if request.method == 'POST':
         try:
             name = request.form.get('name')
@@ -58,7 +80,8 @@ def register():
             print("Registration Error:", e)
             return jsonify({"success": False, "message": "❌ Something went wrong. Please try again."})
 
-    return render_template("register.html")
+    return render_template("register_en.html")
+
 
 @app.route("/timer")
 def timer():
