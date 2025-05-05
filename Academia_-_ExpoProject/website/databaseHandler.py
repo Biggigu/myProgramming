@@ -31,6 +31,9 @@ class DatabaseConnection:
     
 def checkUnique(value):
     value = value.upper()
+    if (len(value) < 8):
+        padding = "0"*(8-len(value))
+        value = padding + value
 
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()

@@ -45,8 +45,8 @@ def register():
         try:
             username = request.form.get("tName")
             usernameCheck = dbHandle.checkUniqueUser(username)
-            print(usernameCheck)
-
+            
+            idCheck = True
             if (usernameCheck == False):
                 return jsonify({"success": False, "message": "❌ The Nickname/Team Name has been taken by someone else please choose another name."})
             else:
@@ -55,6 +55,12 @@ def register():
                     looping = 1
                 else:
                     looping = int(request.form.get("players"))
+
+                for num in range(1,looping+1):
+                    id = request.form.get(f"id{num}")
+                    idCheck = dbHandle.checkUnique(id)
+                    if (idCheck==False):
+                        return jsonify({"success": False, "message": "❌ Someone who already played the game cannot enter again."})
 
                 for num in range(1,looping+1):
                     dbHandle.insertData(request,num)
