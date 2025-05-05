@@ -91,12 +91,11 @@ def retrieveData():
 def sixTopData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    cursor.execute("""SELECT username, escapeTime FROM (
-            SELECT *, ROW_NUMBER() OVER (PARTITION BY username ORDER BY id) as rn
-            FROM players
-        ) sub
-        WHERE rn = 1
-     ORDER BY escapeTime LIMIT 6;""")
+    cursor.execute("""SELECT username, escapeTime 
+                   FROM players
+                   WHERE played = 1
+                   GROUP BY username
+                   ORDER BY escapeTime LIMIT 6;""")
     users = cursor.fetchall()
     connection.close()
     return users

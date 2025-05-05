@@ -12,7 +12,8 @@ class MyDatabase:
         cursor.execute('''CREATE TABLE IF NOT EXISTS timeSlots (
                             bookingDate VARCHAR(50),
                             bookingTime VARCHAR(50),
-                            username VARCHAR(50));''')
+                            username VARCHAR(50),
+                            played BOOLEAN DEFAULT False);''')
         connection.commit()
         connection.close()
 
