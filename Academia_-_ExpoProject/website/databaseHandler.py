@@ -23,8 +23,6 @@ class DatabaseConnection:
                         phone VARCHAR(50),
                         team BOOLEAN,
                         escapeTime TEXT,
-                        bookingDate VARCHAR(50),
-                        bookingTime VARCHAR(50),
                         played BOOLEAN DEFAULT False);''')
         connection.commit()
         connection.close()
@@ -60,8 +58,6 @@ def insertData(request,value):
     group = request.form.get("group_type") == "group"
     email = request.form.get(f"email{value}")
     phone = request.form.get(f"phone{value}")
-    date = request.form.get("date")
-    time = request.form.get("time")
     
     idCard =idCard.upper()
     username = username.title()
@@ -70,8 +66,8 @@ def insertData(request,value):
         idCard = padding + idCard
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO players (idCard, name, surname, username, email, phone, team, escapeTime, bookingDate, bookingTime) VALUES (?,?,?,?,?,?,?,?,?,?)',
-                    (idCard, name, surname,username, email, phone, group,"15:00",date,time))
+    cursor.execute('INSERT INTO players (idCard, name, surname, username, email, phone, team, escapeTime) VALUES (?,?,?,?,?,?,?,?)',
+                    (idCard, name, surname,username, email, phone, group,"15:00"))
     connection.commit()
     connection.close()
 
@@ -87,6 +83,7 @@ def retrieveData():
     users = cursor.fetchall()
     connection.close()
     return users
+
 
 def sixTopData():
     connection = DatabaseConnection().connect()
