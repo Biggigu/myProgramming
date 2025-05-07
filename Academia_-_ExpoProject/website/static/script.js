@@ -23,8 +23,14 @@ function startTimer() {
         running = true;
         localStorage.setItem("timerStopped", "false");
         countdown = setInterval(() => {
-            timeLeft--;
-            updateTimer();
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateTimer();
+            } else {
+                clearInterval(countdown);
+                window.location = "result";
+                running = false;
+            }
         }, 1000);
     }
 
@@ -39,7 +45,7 @@ function startTimer() {
             const mode = localStorage.getItem("displayMode");
             if (mode === "result") {
                 clearInterval(mirrorInterval);
-                window.location.href = "/result";
+                window.location.href = "/leaderboard";
             }
 
             if (localStorage.getItem("timerStopped") === "true") {

@@ -79,6 +79,7 @@ def retrieveData():
         FROM players
         WHERE played = 1
         GROUP BY username
+        ORDER BY escapeTime
     """)
     users = cursor.fetchall()
     connection.close()
@@ -114,7 +115,15 @@ def updateData(escapeTime, tName):
 
     return jsonify({'message': 'Time recorded successfully'})
 
+def updateFData(tName):
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute('UPDATE players SET played = 1 WHERE username = ?;',
+                   (tName,))
+    connection.commit()
+    connection.close() 
 
+    return jsonify({'message': 'Time recorded successfully'})
 
 
 

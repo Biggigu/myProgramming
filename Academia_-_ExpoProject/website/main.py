@@ -162,9 +162,9 @@ def update_time():
     formattedTime = f"{minutes:02}:{seconds:02}"
 
     dbHandle.updateData(formattedTime, teamName)
-    users = dbHandle.retrieveData()
+    #users = dbHandle.retrieveData()
     #position = dbHandle.ranking()[0]
-    message = "Congratulations! You successfully completed the Escape Room."
+    #message = "Congratulations! You successfully completed the Escape Room."
 
     return redirect("index")
     #return render_template("result.html", message=message, users=users)
