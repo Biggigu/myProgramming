@@ -104,19 +104,21 @@ def dataByID(num):
     connection.close()
     return users
 
+def updateData(escapeTime, tName):
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute('UPDATE players SET escapeTime = ?, played = 1 WHERE username = ?;',
+                   (escapeTime, tName))
+    connection.commit()
+    connection.close() 
+
+    return jsonify({'message': 'Time recorded successfully'})
+
+
+
 
 
 # To check
-def updateData(escapeTime):
-    """ connection = DatabaseConnection().connect()
-    cursor = connection.cursor()
-    cursor.execute('UPDATE players SET escapeTime = ? WHERE id = (SELECT MAX(id) FROM players);',
-                   (escapeTime,))
-    connection.commit()
-    connection.close() """
-
-    return jsonify({'message': 'Code need to be adjusted accordingly'})
-
 # For sending emails
 def retrieveOne():
     connection = DatabaseConnection().connect()

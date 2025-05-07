@@ -136,7 +136,6 @@ def register_en():
 
     return render_template("register_en.html")
 
-
 @app.route("/timer")
 def timer():
     return render_template("timer.html")
@@ -163,7 +162,7 @@ def update_time():
     escapeTime = int(escapeTime)
     formattedTime = f"{escapeTime // 60:02}:{escapeTime % 60:02}"
 
-    dbHandle.updateData(formattedTime)
+    dbHandle.updateData(formattedTime, teamName)
     users = dbHandle.retrieveData()
     #position = dbHandle.ranking()[0]
     message = "Congratulations! You successfully completed the Escape Room."
