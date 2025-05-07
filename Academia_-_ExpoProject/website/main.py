@@ -38,14 +38,20 @@ def main():
 @app.route("/startGame")
 def preBooking():
     users = dbHandle.dataByID("")
-    return render_template("confirmBooking.html", users=users)
+    check = len(users) != 0
+    return render_template("confirmBooking.html", users=users, check = check)
 
 @app.route("/searchName", methods=['GET', 'POST'])
 def searchName():
     if request.method == 'POST':
         id = request.form.get("idCard")
+        id =id.upper()
+        if (len(id) < 8):
+            padding = "0"*(8-len(id))
+            id = padding + id
         users = dbHandle.dataByID(id)
-        return render_template("confirmBooking.html", users=users)
+        check = len(users) != 0
+        return render_template("confirmBooking.html", users=users, check = check)
 
 @app.route("/leaderboard")
 def leaderboard():

@@ -44,9 +44,10 @@
     </table>
 </div>
 
-
     <!-- Start Button -->
-    <button id="startBtn" class="btn btn-dark" onclick="startEscape()">IBDA AHRAB</button>
+     {% if check %}
+    <button id="startBtn" class="btn btn-dark" onclick="location.href='/timer'">IBDA AHRAB</button>
+    {% endif %}
   </div>
 
   <script>
