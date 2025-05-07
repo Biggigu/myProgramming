@@ -154,13 +154,9 @@ def result():
 def update_time():
     escapeTime = request.form.get("time")
 
-    print(escapeTime)
-    # Ensure it's an integer string (seconds)
-    if not escapeTime or not escapeTime.isdigit():
-        return "Error: Invalid time format", 400
-
     escapeTime = int(escapeTime)
-    formattedTime = f"{escapeTime // 60:02}:{escapeTime % 60:02}"
+    timeTaken = 900 - escapeTime
+    formattedTime = f"{timeTaken // 60:02}:{escapeTime % 60:02}"
 
     dbHandle.updateData(formattedTime, teamName)
     users = dbHandle.retrieveData()
