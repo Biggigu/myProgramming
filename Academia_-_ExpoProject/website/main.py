@@ -156,7 +156,10 @@ def update_time():
 
     escapeTime = int(escapeTime)
     timeTaken = 900 - escapeTime
-    formattedTime = f"{timeTaken // 60:02}:{escapeTime % 60:02}"
+    # Convert seconds to MM:SS format
+    minutes = timeTaken // 60
+    seconds = timeTaken % 60
+    formattedTime = f"{minutes:02}:{seconds:02}"
 
     dbHandle.updateData(formattedTime, teamName)
     users = dbHandle.retrieveData()
