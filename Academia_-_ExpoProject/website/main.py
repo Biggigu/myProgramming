@@ -37,7 +37,15 @@ def main():
 
 @app.route("/startGame")
 def preBooking():
-    return render_template("confirmBooking.html")
+    users = dbHandle.dataByID("")
+    return render_template("confirmBooking.html", users=users)
+
+@app.route("/searchName", methods=['GET', 'POST'])
+def searchName():
+    if request.method == 'POST':
+        id = request.form.get("idCard")
+        users = dbHandle.dataByID(id)
+        return render_template("confirmBooking.html", users=users)
 
 @app.route("/leaderboard")
 def leaderboard():
@@ -85,6 +93,7 @@ def register():
             })
 
     return render_template("register.html")
+
 
 
 @app.route("/register_en", methods=['GET', 'POST'])

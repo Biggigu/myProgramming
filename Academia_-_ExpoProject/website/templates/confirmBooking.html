@@ -15,42 +15,42 @@
     <h3 class="mb-4">Jirnexxielek Tahrab?</h3>
 
     <!-- ID Search Row -->
-    <div class="input-group mb-3 justify-content-center w-50 mx-auto">
-      <input type="text" id="idCard" class="form-control" placeholder="SEARCH" />
-      <button class="btn btn-outline-secondary" type="button" onclick="lookupUser()">🔍</button>
-    </div>
+    <form method="POST" action="/searchName">
+      <div class="input-group mb-3 justify-content-center w-50 mx-auto">
+        <input type="text" id="idCard" name="idCard" class="form-control" placeholder="search by ID Card" />
+        <button class="btn btn-outline-secondary" type="submit">🔍</button>
+      </div>
+    </form>
+    
+  <div class="mt-4 p-3 border rounded bg-white">
+    <h2 class="mb-3">Escape Champions!</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID Card</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-entries">
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-    <!-- Auto-fill Info -->
-    <div class="mb-3 w-50 mx-auto">
-      <input type="text" id="name" class="form-control mb-2" placeholder="ISEM" readonly />
-      <input type="email" id="email" class="form-control" placeholder="EMAIL" readonly />
-    </div>
-
-    <!-- Consent Checkbox -->
-    <div class="form-check text-center mb-3">
-      <input type="checkbox" class="form-check-input" id="consentCheckbox" />
-      <label class="form-check-label" for="consentCheckbox">
-        ✔ Photos Consent T&C
-      </label>
-    </div>
 
     <!-- Start Button -->
-    <button id="startBtn" class="btn btn-dark" disabled onclick="startEscape()">IBDA AHRAB</button>
+    <button id="startBtn" class="btn btn-dark" onclick="startEscape()">IBDA AHRAB</button>
   </div>
 
   <script>
-    function lookupUser() {
-      const idCard = document.getElementById("idCard").value.trim();
 
-      // Dummy behavior for now (replace with backend fetch if needed)
-      if (idCard === "12345M") {
-        document.getElementById("name").value = "John Test";
-        document.getElementById("email").value = "john@example.com";
-        checkIfReady();
-      } else {
-        alert("User not found");
-      }
-    }
 
     function checkIfReady() {
       const filled = document.getElementById("name").value !== "" && document.getElementById("email").value !== "";

@@ -84,7 +84,6 @@ def retrieveData():
     connection.close()
     return users
 
-
 def sixTopData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
@@ -97,7 +96,13 @@ def sixTopData():
     connection.close()
     return users
 
-
+def dataByID(num):
+    connection = DatabaseConnection().connect()
+    cursor = connection.cursor()
+    cursor.execute("""SELECT idCard, name, surname FROM players WHERE username = (SELECT username FROM players WHERE idCard=?);""", (num,))
+    users = cursor.fetchall()
+    connection.close()
+    return users
 
 
 
