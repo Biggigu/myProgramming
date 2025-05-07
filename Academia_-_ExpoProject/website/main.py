@@ -155,6 +155,7 @@ def result():
 def update_time():
     escapeTime = request.form.get("time")
 
+    print(escapeTime)
     # Ensure it's an integer string (seconds)
     if not escapeTime or not escapeTime.isdigit():
         return "Error: Invalid time format", 400
