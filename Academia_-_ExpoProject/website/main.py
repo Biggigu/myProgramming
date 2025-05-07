@@ -11,6 +11,7 @@ app.permanent_session_lifetime = timedelta(minutes=5)
 app.register_blueprint(exportDB)
 
 ADMIN_PASSWORD = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9"
+teamName = ""
 
 def checkPassword(password,actualPassword):
     input = hashlib.sha256(password.encode()).hexdigest()
@@ -51,6 +52,9 @@ def searchName():
             id = padding + id
         users = dbHandle.dataByID(id)
         check = len(users) != 0
+        if check:
+            global teamName
+            teamName = users[0][3]
         return render_template("confirmBooking.html", users=users, check = check)
 
 @app.route("/leaderboard")

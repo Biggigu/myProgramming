@@ -99,7 +99,7 @@ def sixTopData():
 def dataByID(num):
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    cursor.execute("""SELECT idCard, name, surname FROM players WHERE username = (SELECT username FROM players WHERE idCard=?);""", (num,))
+    cursor.execute("""SELECT idCard, name, surname, username FROM players WHERE username = (SELECT username FROM players WHERE idCard=?);""", (num,))
     users = cursor.fetchall()
     connection.close()
     return users
