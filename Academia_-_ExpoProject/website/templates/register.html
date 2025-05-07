@@ -29,7 +29,7 @@
       <h2 class="fw-bold">Prenotazzjoni</h2>
     </div>
 
-    <form method="POST" action="/register" class="p-4 bg-white rounded shadow-lg">
+    <form id="registrationForm" method="POST" action="/register" class="p-4 bg-white rounded shadow-lg">
       <h5 class="mb-3 text-start text-primary">👤 Dettalji tal-Mexxej tat-Tim</h5>
 
       <div class="row g-3">
@@ -56,26 +56,6 @@
         <div class="col-md-6">
           <label class="form-label">Numru tal-Mowbajl</label>
           <input id="phone1" type="tel" class="form-control" name="phone1" required />
-        </div>
-      </div>
-
-      <hr class="my-4" />
-
-      <h5 class="mb-3 text-start text-primary">📅 Informazzjoni dwar il-Booking</h5>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label">Data</label>
-          <input type="date" class="form-control" name="date" required />
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Ħin Preferut</label>
-          <select class="form-select" name="time" required>
-            <option value="">Agħżel ħin</option>
-            <option>10:00</option>
-            <option>10:30</option>
-            <option>11:00</option>
-            <option>11:30</option>
-          </select>
         </div>
       </div>
 
@@ -202,7 +182,46 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("playersNum").addEventListener("input", generatePlayerFields);
       toggleDiv();
+
+      document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        const existingAlert = document.getElementById('formAlert');
+        if (existingAlert) existingAlert.remove(); // remove any previous alert
+
+        const alertDiv = document.createElement('div');
+        alertDiv.id = 'formAlert';
+        alertDiv.className = `alert ${result.success ? 'alert-success' : 'alert-danger'} mt-3`;
+        alertDiv.innerText = result.message;
+
+        form.appendChild(alertDiv);
+
+        if (result.success) {
+          setTimeout(() => {
+            window.location.href = "/"; // redirect after short delay
+          }, 1500);
+        }
+
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-danger mt-3';
+        alertDiv.innerText = "❌ Żball mhux mistennija. Jekk jogħġbok erġa’ ipprova.";
+        form.appendChild(alertDiv);
+      }
     });
+  });
   </script>
 </body>
 </html>
