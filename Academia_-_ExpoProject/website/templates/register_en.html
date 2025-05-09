@@ -61,26 +61,6 @@
 
       <hr class="my-4" />
 
-      <h5 class="mb-3 text-start text-primary">📅 Booking Info</h5>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control" name="date" required />
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Time Slot</label>
-          <select class="form-select" name="time" required>
-            <option value="">Select a time</option>
-            <option>10:00</option>
-            <option>10:30</option>
-            <option>11:00</option>
-            <option>11:30</option>
-          </select>
-        </div>
-      </div>
-
-      <hr class="my-4" />
-
       <div class="row g-3">
         <div class="col-md-6">
           <label class="form-label">Group Type</label><br />
@@ -121,7 +101,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-dark w-100">SUBMIT</button>
+      <button type="submit" class="btn btn-dark w-100" disabled>SUBMIT</button>
     </form>
   </div>
 
@@ -150,6 +130,8 @@
     function toggleDiv() {
       const selectedValue = document.querySelector('input[name="group_type"]:checked').value;
       const valGroup = document.getElementById("valGroup");
+      const additionPlayers = document.getElementById("additionPlayers");
+
       if (selectedValue === "group") {
         valGroup.style.display = "block";
         additionPlayers.style.display = "block";
@@ -202,6 +184,16 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("playersNum").addEventListener("input", generatePlayerFields);
       toggleDiv();
+
+      const form = document.querySelector('form');
+      const checkbox = document.getElementById('agree');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      checkbox.addEventListener("change", () => {
+        submitBtn.disabled = !checkbox.checked;
+      });
+
+      submitBtn.disabled = !checkbox.checked;
     });
   </script>
 </body>
