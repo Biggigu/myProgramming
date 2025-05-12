@@ -17,19 +17,19 @@
     <!-- ID Search Row -->
     <form method="POST" action="/searchName">
       <div class="input-group mb-3 justify-content-center w-50 mx-auto">
-        <input type="text" id="idCard" name="idCard" class="form-control" placeholder="search by ID Card" />
+        <input type="text" id="idCard" name="idCard" class="form-control" placeholder="Fittex bl-ID Card" />
         <button class="btn btn-outline-secondary" type="submit">🔍</button>
       </div>
     </form>
     
   <div class="mt-4 p-3 border rounded bg-white">
-    <h2 class="mb-3">Escape Champions!</h2>
+    <h2 class="mb-3">Nies li sa jiparteċipaw</h2>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID Card</th>
-                <th>Name</th>
-                <th>Surname</th>
+                <th>Isem</th>
+                <th>Kunjom</th>
             </tr>
         </thead>
         <tbody id="leaderboard-entries">
@@ -49,7 +49,7 @@
 
     <!-- Start Button -->
      {% if check %}
-    <button id="startBtn" class="btn btn-dark" onclick="location.href='/timer'">IBDA AHRAB</button>
+    <button id="startBtn" class="btn btn-dark" onclick="location.href='/timer'">IBDA AĦRAB</button>
     {% endif %}
   </div>
 
