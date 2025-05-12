@@ -12,19 +12,6 @@
 </head>
 <body class="bg-light text-center">
 
-    <!-- Language Switcher -->
-    <div class="container text-end mt-2">
-        <div class="d-inline-flex align-items-center" style="gap: 5px;">
-            <a href="/register" style="background: transparent;">
-                <img src="{{ url_for('static', filename='images/MT_Flag.png') }}" alt="Malti" style="height: 24px; width: 24px;">
-            </a>
-            <a href="/register_en" style="background: transparent;">
-                <img src="{{ url_for('static', filename='images/UK_Flag.png') }}" alt="English"
-                     style="height: 24px; width: 24px; opacity: {{ '1' if request.path == '/register_en' else '0.3' }};">
-            </a>
-        </div>
-    </div>
-
     <!-- Expo25 Logo -->
     <div class="container my-4">
         <img src="{{ url_for('static', filename='images/Expo25 LOGO-Horizontal-transparentBackground.png') }}"

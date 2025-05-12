@@ -11,29 +11,17 @@
 </head>
 <body class="text-center bg-light">
 
-    <!-- Language Switcher -->
-    <div class="container text-end mt-2">
-        <div class="d-inline-flex align-items-center" style="gap: 5px;">
-            <a href="/index" style="background: transparent;">
-                <img src="{{ url_for('static', filename='images/MT_Flag.png') }}"
-                    alt="Malti"
-                    style="height: 24px; width: 24px;">
-            </a>
-            <a href="/index_en" style="background: transparent;">
-                <img src="{{ url_for('static', filename='images/UK_Flag.png') }}"
-                    alt="English"
-                    style="height: 24px; width: 24px; opacity: {{ '1' if request.path == '/index_en' else '0.3' }};">
-            </a>
-        </div>
-    </div>
-
     <div class="container mt-3">
         <div class="container position-relative mb-4">
-            <img src="{{ url_for('static', filename='images/Expo25 LOGO-Horizontal-transparentBackground.png') }}"
+            <img src="{{ url_for('static', filename='images/Expo25 LOGO-transparentBackground.png') }}"
                  alt="Expo Logo"
                  style="max-height: 300%; position: absolute; top: 0; left: 0;"
                  class="img-fluid logo-top">
             <h1 id="secret-admin-trigger" class="text-center mb-lg-5">Tista' ma Titgerbibx?</h1>
+            <img src="{{ url_for('static', filename='images/Expo25 LOGO-transparentBackground.png') }}"
+                 alt="Expo Logo"
+                 style="max-height: 300%; position: absolute; top: 0; right: 0;"
+                 class="img-fluid logo-top">
         </div>
 
         <!-- START Button -->
