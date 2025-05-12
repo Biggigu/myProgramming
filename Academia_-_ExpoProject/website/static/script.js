@@ -30,6 +30,16 @@ function startTimer() {
                 clearInterval(countdown);
                 window.location = "result";
                 running = false;
+
+                localStorage.setItem("displayMode", "result"); // Notify monitor screen
+
+                // Redirect based on the current screen
+                if (window.location.pathname === "/timerDisplay") {
+                    window.location.href = "/result"; // Monitor 2
+                } else {
+                    window.location.href = "/update-time"; // Main controller goes to home or another page
+
+                }
             }
         }, 1000);
     }

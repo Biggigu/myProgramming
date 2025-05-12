@@ -150,9 +150,13 @@ def result():
     message = "Congratulation for your efforts"
     return render_template("result.html", users=users, message=message)
 
-@app.route("/update-time", methods=['POST'])
+@app.route("/update-time", methods=['GET', 'POST'])
 def update_time():
-    escapeTime = request.form.get("time")
+    try:
+        escapeTime = request.form.get("time")
+        escapeTime = int(escapeTime)
+    except:
+        escapeTime = 0  # Default to 0 if missing or invalid
 
     escapeTime = int(escapeTime)
     timeTaken = 900 - escapeTime
