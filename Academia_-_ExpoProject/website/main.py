@@ -84,7 +84,7 @@ def register():
                 if not idCheck:
                     return jsonify({
                         "success": False,
-                        "message": "❌ Parteċipant li diġà lagħab ma jistax jerġa’ jipparteċipa."
+                        "message": f"❌ Parteċipant bl-ID Card numru {id} diġà irreġistra u ma jistax jerġa’ jipparteċipa."
                     })
 
             for num in range(1, looping + 1):
@@ -123,7 +123,7 @@ def register_en():
                 id = request.form.get(f"id{num}")
                 idCheck = dbHandle.checkUnique(id)
                 if not idCheck:
-                    return jsonify({"success": False, "message": "❌ A player has already participated and cannot re-enter."})
+                    return jsonify({"success": False, "message": f"❌ The player with ID Card {id} has already registed and cannot re-enter."})
 
             for num in range(1, looping + 1):
                 dbHandle.insertData(request, num)
