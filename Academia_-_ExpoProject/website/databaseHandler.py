@@ -92,7 +92,7 @@ def sixTopData():
                    FROM players
                    WHERE played = 1
                    GROUP BY username
-                   ORDER BY escapeTime LIMIT 6;""")
+                   ORDER BY escapeTime LIMIT 5;""")
     users = cursor.fetchall()
     connection.close()
     return users

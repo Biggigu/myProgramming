@@ -9,18 +9,6 @@
 </head>
 <body class="bg-light">
 
-  <!-- Language Switcher -->
-  <div class="container text-end mt-2">
-    <div class="d-inline-flex align-items-center" style="gap: 5px;">
-      <a href="/register" style="background: transparent;">
-        <img src="{{ url_for('static', filename='images/MT_Flag.png') }}" alt="Malti" style="height: 24px; width: 24px;">
-      </a>
-      <a href="/register_en" style="background: transparent;">
-        <img src="{{ url_for('static', filename='images/UK_Flag.png') }}" alt="English" style="height: 24px; width: 24px; opacity: {{ '1' if request.path == '/register_en' else '0.3' }};">
-      </a>
-    </div>
-  </div>
-
   <div class="container my-5">
     <div class="text-center mb-4">
       <h4 class="text-muted">Jirnexxielek Toħrog?</h4>
@@ -61,7 +49,7 @@
 
       <div class="row g-3">
         <div class="col-md-6">
-          <label class="form-label">Tip ta' Grupp</label><br />
+          <h5 class="mb-3 text-start text-primary">Tip ta' Grupp</h5>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="group_type" value="single" checked onchange="toggleDiv()" />
             <label class="form-check-label">Parteċipant Wieħed</label>
@@ -91,11 +79,7 @@
         <div class="form-check d-inline-block">
           <input type="checkbox" id="agree" name="agree" class="form-check-input" />
           <label class="form-check-label text-muted" for="agree">
-            Jien naqbel ma’
-            <a class="terms-link" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">
-              termini u kundizzjonijiet
-            </a>
-            ġaladarba nipparteċipa.
+            Jien naqbel ma’ termini u kundizzjonijiet ġaladarba nipparteċipa.
           </label>
         </div>
       </div>
