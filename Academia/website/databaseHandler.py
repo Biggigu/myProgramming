@@ -99,7 +99,7 @@ def ranking():
 def sixTopData():
     connection = DatabaseConnection().connect()
     cursor = connection.cursor()
-    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime FROM players ORDER BY escapeTime LIMIT 6;")
+    cursor.execute("SELECT name || ' ' || surname AS 'username', escapeTime FROM players ORDER BY escapeTime LIMIT 5;")
     users = cursor.fetchall()
     connection.close()
     return users

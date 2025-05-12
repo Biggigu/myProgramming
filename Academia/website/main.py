@@ -94,7 +94,7 @@ def timer_display():
 @app.route("/result")
 def result():
     users = dbHandle.retrieveData()
-    message = "Congratulation for your efforts"
+    message = "Grazzi tal-Parteċipazzjoni"
     return render_template("result.html", users=users, message=message)
 
 @app.route("/update-time", methods=['POST'])
